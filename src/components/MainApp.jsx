@@ -1,9 +1,16 @@
 import React from 'react'
+import Footer from './Footer'
+import ItemListContainer from './ItemListContainer'
+import NavBar from './NavBar'
+import SlideShow from './SlideShow'
 
 const MainApp = () => {
     return (
         <>
-            <h1>Frutilla a la Reina</h1>
+            <NavBar />
+            <ItemListContainer greeting={"No encontramos ese producto!"}/>
+            <SlideShow />
+            <Footer />
         </>
     )
 }

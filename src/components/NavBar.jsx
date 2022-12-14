@@ -1,5 +1,6 @@
-import React from 'react'
-import CartWidget from './CartWidget'
+import React from 'react';
+import CartWidget from './CartWidget';
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -8,26 +9,30 @@ const NavBar = () => {
 
                 <div className='row justify-content-between align-items-center navBar-top'>
                     <div className="col-11">
-                    <a href="#"><img src={"img/logo-header.png"} alt={"Frutilla a la reina"} /></a>
+                        <Link to={"/"}><img src={"/img/logo-header.png"} alt={"Frutilla a la reina"} /></Link>
                     </div>
                     <div className="col-1">
-                    {<CartWidget/>}
+                        {<CartWidget />}
                     </div>
                 </div>
 
                 <ul className='navBar-links'>
                     <li>
-                        <a href="#">INICIO</a>
+                        <NavLink to={"/"}>INICIO</NavLink>
                     </li>
                     <li>
-                        <a href="#">PRODUCTOS</a>
+                        <NavLink to={"/category/tortas"}>TORTAS</NavLink>
                     </li>
                     <li>
-                        <a href="#">NOSOTROS</a>
+                        <NavLink to={"/category/alfajores"}>ALFAJORES</NavLink>
                     </li>
                     <li>
-                        <a href="#">CONTACTO</a>
+                        <NavLink to={"/category/cuadrados"}>CUADRADOS</NavLink>
                     </li>
+                    <li>
+                        <NavLink to={"/category/cupcakes"}>CUPCAKES</NavLink>
+                    </li>
+
                 </ul>
             </nav>
 

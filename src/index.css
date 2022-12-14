@@ -21,7 +21,7 @@ code {
   align-items: center;
   background-color: #EBAFD2;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   height: 50px;
   justify-items: center;
   list-style: none;
@@ -42,9 +42,46 @@ code {
 
 }
 
-
+/* Footer */
 
 .footer-container {
   background-color: #EBAFD2;
   text-align: center;
 }
+
+/*Products*/
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+/* Item Card */
+
+.card-style:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #888888;
+  transition: all 250ms ease-in;
+  transform: scale(102%, 102%);
+}
+
+
+
+
+@media (min-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 993px) {
+  .products-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* @media (min-width: 1400px) {
+  .products-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+} */

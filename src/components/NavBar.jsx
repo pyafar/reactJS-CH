@@ -7,11 +7,11 @@ const NavBar = () => {
         <>
             <nav className='navBar'>
 
-                <div className='row justify-content-between align-items-center navBar-top'>
-                    <div className="col-11">
+                <div className='navBar-top'>
+                    <div className=" navBar-logo">
                         <Link to={"/"}><img src={"/img/logo-header.png"} alt={"Frutilla a la reina"} /></Link>
                     </div>
-                    <div className="col-1">
+                    <div className="navBar-cart">
                         {<CartWidget />}
                     </div>
                 </div>

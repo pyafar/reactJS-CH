@@ -1,22 +1,24 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
   return (
-<div className="card">
-  <img src={`/img/products/${item.image}.jpg`} className="card-img-top" alt={item.title} />
-  <div className="card-body">
-    <h5 className="card-title">{item.title}</h5>
-    <p className="card-text">{item.description}</p>
-  </div>
-  <ul className="list-group list-group-flush">
-    <li className="list-group-item">${item.price}</li>
-  </ul>
-  <div className="card-body">
-    <ItemCount stockItems = { item.stock }/>
-  </div>
-</div>
+    <div className="detail-card text-center">
+      <div className="detail-top">
+        <img src={`/img/products/${item.image}.jpg`} className="detail-img" alt={item.title} />
+      </div>
+      <div className="detail-bot">
+        <h5 className="detail-title">{item.title}</h5>
+        <hr />
+        <p className="detail-text">{item.description}</p>
+        <hr />
+        <p className="detail-price">Precio por unidad: ${item.price}</p>
+        <div className="detail-cart">
+          <ItemCount stockItems={item.stock} />
+        </div>
+      </div>
+    </div>
   )
 }
 
-export default ItemDetail
+export default ItemDetail;

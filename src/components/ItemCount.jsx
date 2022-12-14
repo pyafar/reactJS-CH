@@ -2,64 +2,61 @@ import React, { useState } from 'react';
 
 const ItemCount = ({ stockItems }) => {
 
+
     const [counter, setCounter] = useState(0);
     const [stock, setStock] = useState(stockItems);
-    console.log(stock)
 
-    const stockAdd = () =>{
-        if (counter < stock){
+    const stockAdd = () => {
+        if (counter < stock) {
             setCounter(counter + 1);
         }
     };
 
-    const stockRest = () =>{
-        if (counter > 0 ){
+    const stockRest = () => {
+        if (counter > 0) {
             setCounter(counter - 1)
         }
     };
 
-    const onAdd = ()=> {
-        if (counter <= stock && counter > 0){
+    const onAdd = () => {
+        if (counter <= stock && counter > 0) {
             setStock(stock - counter);
             setCounter(0);
             console.log("Agregaste: " + counter + " productos al carrito");
-        } 
+        }
     };
 
     return (
-        <div className="container">
-            <div className='row'>
-                <div className='col-md-2'>
-                    <div className="btn-group" role="group" aria-label="Basic outlined example">
-                        <button 
+        <div className="itemCount-cont">
+            <div className="counters">
+                        <button
                             type="button"
-                            className="btn btn-outline-primary"
+                            className="btn itemcount-btn"
                             onClick={stockRest}>
-                                -
+                            -
                         </button>
-                        <button 
-                            type="button" 
-                            className="btn btn-outline-primary"
+                        <button
+                            type="button"
+                            className="btn itemcount-btn"
                             disabled>
-                                { counter }
+                            {counter}
                         </button>
-                        <button 
-                            type="button" 
-                            className="btn btn-outline-primary"
-                            onClick={stockAdd}>    
-                                +
+                        <button
+                            type="button"
+                            className="btn itemcount-btn"
+                            onClick={stockAdd}>
+                            +
                         </button>
-                    </div>
-                </div>
+
             </div>
-            <div className="row">
-                <div className="col-md-2">
+            <div className="add-btn">
+
                     <button
-                        className="btn btn-outline-primary" 
+                        className="btn itemcount-btn"
                         onClick={onAdd}>
-                            Agregar al carrito
+                        Agregar al carrito
                     </button>
-                </div>
+
             </div>
 
         </div>
